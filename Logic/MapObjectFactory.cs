@@ -25,9 +25,12 @@ namespace Logic
             return _instance;
         }
 
-        public void AddAllMapObjects(HashSet<string[]> objects)
+        public void AddMapObjects(HashSet<string[]> objects)
         {
-            //foreach 
+            foreach (string[] line in objects)
+            {
+                mapObjects.Add(GetMapObject(line));
+            }
         }
 
         public MapObject GetMapObject(string[] input)

@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Logic;
 using Logic.Objects;
@@ -22,6 +23,9 @@ namespace Debug
     {
         static void Main(string[] args)
         {
+
+            CultureInfo.DefaultThreadCurrentCulture = new System.Globalization.CultureInfo("en-US");
+            CultureInfo.DefaultThreadCurrentUICulture = new System.Globalization.CultureInfo("en-US");
 
             var lines = File.ReadAllLines(@"D:\Utgard.csv").Select(a => a.Split(';'));
             HashSet<string[]> items = new HashSet<string[]>();
@@ -44,6 +48,9 @@ namespace Debug
             string[] csv = { "spawnpoint", "playerC", "-1625.263", "36.26612", "12391.56", "0", "0.01555714", "0", "0.999879" };
             MapObject mapObject;
             MapObjectFactory mapObjectFactory = MapObjectFactory.GetMapObjectFactory();
+
+            double number = double.Parse(csv[2]);
+            Console.WriteLine(number);
 
             mapObject = mapObjectFactory.GetMapObject(csv);
 
