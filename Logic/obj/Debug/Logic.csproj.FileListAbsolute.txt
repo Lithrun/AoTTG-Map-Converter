@@ -3,3 +3,4 @@ D:\Hobby\AoTTG-Map-Converter\Logic\bin\Debug\Logic.pdb
 D:\Hobby\AoTTG-Map-Converter\Logic\obj\Debug\Logic.csproj.CoreCompileInputs.cache
 D:\Hobby\AoTTG-Map-Converter\Logic\obj\Debug\Logic.dll
 D:\Hobby\AoTTG-Map-Converter\Logic\obj\Debug\Logic.pdb
+D:\Hobby\AoTTG-Map-Converter\Logic\obj\Debug\Logic.csprojResolveAssemblyReference.cache

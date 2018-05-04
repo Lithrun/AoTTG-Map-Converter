@@ -1,0 +1,10 @@
+D:\Hobby\AoTTG-Map-Converter\Debug\bin\Debug\Debug.exe.config
+D:\Hobby\AoTTG-Map-Converter\Debug\bin\Debug\Debug.exe
+D:\Hobby\AoTTG-Map-Converter\Debug\bin\Debug\Debug.pdb
+D:\Hobby\AoTTG-Map-Converter\Debug\bin\Debug\Logic.dll
+D:\Hobby\AoTTG-Map-Converter\Debug\bin\Debug\Logic.pdb
+D:\Hobby\AoTTG-Map-Converter\Debug\obj\Debug\Debug.csprojResolveAssemblyReference.cache
+D:\Hobby\AoTTG-Map-Converter\Debug\obj\Debug\Debug.csproj.CoreCompileInputs.cache
+D:\Hobby\AoTTG-Map-Converter\Debug\obj\Debug\Debug.csproj.CopyComplete
+D:\Hobby\AoTTG-Map-Converter\Debug\obj\Debug\Debug.exe
+D:\Hobby\AoTTG-Map-Converter\Debug\obj\Debug\Debug.pdb
