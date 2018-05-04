@@ -32,6 +32,8 @@ namespace Logic.Objects
                 Type = input[1];
 
                 Texture = input[2];
+
+                // length, width, height
                 Scale = new double[3] { double.Parse(input[5]), double.Parse(input[3]), double.Parse(input[4]) };
                 Color = new double[4] { double.Parse(input[6]), double.Parse(input[7]), double.Parse(input[8]), double.Parse(input[9]) };
                 Tiling = new double[2] { double.Parse(input[10]), double.Parse(input[11]) };

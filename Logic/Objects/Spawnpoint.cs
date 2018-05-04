@@ -17,7 +17,7 @@ namespace Logic.Objects
             {
 
                 // given input has not the correct size, invalid!
-                if (input.Length != 8)
+                if (input.Length != 9)
                 {
                     throw new Exception();
                 }
@@ -38,7 +38,7 @@ namespace Logic.Objects
         // Return a string in CSV format
         public override string ConvertObjectToString()
         {
-            return String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8};",Name, Type, Coordinates[0], Coordinates[2], Coordinates[1], Vector4D[0], Vector4D[1], Vector4D[2], Vector4D[3]);
+            return String.Format("{0},{1},{2:},{3},{4},{5},{6},{7},{8};",Name, Type, Coordinates[0].ToString(), Coordinates[2], Coordinates[1], Vector4D[0], Vector4D[1], Vector4D[2], Vector4D[3]);
         }
 
         

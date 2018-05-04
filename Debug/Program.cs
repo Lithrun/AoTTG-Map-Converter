@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,36 +17,35 @@ namespace Debug
 
 
     // Idk how to add this console within the same project so oef
+    // Issue: double.Parse uses Culture (so it only checks for comma instead of a dot for doubles while the text file uses dots...)
     class Program
     {
         static void Main(string[] args)
         {
 
+            var lines = File.ReadAllLines(@"D:\Utgard.csv").Select(a => a.Split(';'));
+            HashSet<string[]> items = new HashSet<string[]>();
+
+            foreach (string[] line in lines)
+            {
+                items.Add(line[0].Split(',').ToArray());
+            }
+
+
+            foreach (string[] line in items)
+            {
+                Console.WriteLine(line[0]);
+            }
+
+            Console.ReadLine();
+
             // csv consists of multiple lines of string arrays (line)
 
-            string[] line = { "spawnpoint", "playerC","-1625.263","36.26612","12391.56","0","0.01555714","0","0.999879" };
+            string[] csv = { "spawnpoint", "playerC", "-1625.263", "36.26612", "12391.56", "0", "0.01555714", "0", "0.999879" };
             MapObject mapObject;
+            MapObjectFactory mapObjectFactory = MapObjectFactory.GetMapObjectFactory();
 
-
-            switch (line[0])
-            {
-                case "spawnpoint":
-                    mapObject = new Spawnpoint(line);
-                    break;
-                case "custom":
-                    mapObject = new Custom(line);
-                    break;
-                //Same as custom???
-                case "customb":
-                    mapObject = new Custom(line);
-                    break;
-                //Undefined
-                default:
-                    mapObject = null;
-                    break;
-
-
-            }
+            mapObject = mapObjectFactory.GetMapObject(csv);
 
             Console.WriteLine(mapObject.Name);
             Console.WriteLine(mapObject.ConvertObjectToString());
