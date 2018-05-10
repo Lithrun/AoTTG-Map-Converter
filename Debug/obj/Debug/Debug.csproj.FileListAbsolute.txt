@@ -8,3 +8,6 @@ D:\Hobby\AoTTG-Map-Converter\Debug\obj\Debug\Debug.csproj.CoreCompileInputs.cach
 D:\Hobby\AoTTG-Map-Converter\Debug\obj\Debug\Debug.csproj.CopyComplete
 D:\Hobby\AoTTG-Map-Converter\Debug\obj\Debug\Debug.exe
 D:\Hobby\AoTTG-Map-Converter\Debug\obj\Debug\Debug.pdb
+C:\Users\Axel\Desktop\DATA TEST\AoTTG-Map-Converter\Debug\bin\Debug\Debug.exe.config
+C:\Users\Axel\Desktop\DATA TEST\AoTTG-Map-Converter\Debug\obj\Debug\Debug.exe
+C:\Users\Axel\Desktop\DATA TEST\AoTTG-Map-Converter\Debug\obj\Debug\Debug.pdb

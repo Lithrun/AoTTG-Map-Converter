@@ -40,11 +40,12 @@
             this.MapScriptTBX = new System.Windows.Forms.TextBox();
             this.InstructionsTBX = new System.Windows.Forms.TextBox();
             this.MassPlace = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.MassPlaceClearBTN = new System.Windows.Forms.Button();
             this.MassPlaceScriptTBX = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.RegionMove.SuspendLayout();
             this.MassPlace.SuspendLayout();
@@ -63,6 +64,7 @@
             // 
             // RegionMove
             // 
+            this.RegionMove.Controls.Add(this.label1);
             this.RegionMove.Controls.Add(this.MapScriptOutpClearBTN);
             this.RegionMove.Controls.Add(this.CopyClipboardBTN);
             this.RegionMove.Controls.Add(this.MapScriptOutputTBX);
@@ -110,10 +112,11 @@
             // 
             // RotationTBX
             // 
-            this.RotationTBX.Location = new System.Drawing.Point(136, 160);
+            this.RotationTBX.Location = new System.Drawing.Point(191, 160);
             this.RotationTBX.Name = "RotationTBX";
-            this.RotationTBX.Size = new System.Drawing.Size(100, 20);
+            this.RotationTBX.Size = new System.Drawing.Size(47, 20);
             this.RotationTBX.TabIndex = 4;
+            this.RotationTBX.Text = "0";
             // 
             // MoveObjectsBTN
             // 
@@ -123,6 +126,7 @@
             this.MoveObjectsBTN.TabIndex = 3;
             this.MoveObjectsBTN.Text = "Move/Rotate objects";
             this.MoveObjectsBTN.UseVisualStyleBackColor = true;
+            this.MoveObjectsBTN.Click += new System.EventHandler(this.MoveObjectsBTN_Click);
             // 
             // MapScriptClearBTN
             // 
@@ -167,6 +171,14 @@
             this.MassPlace.Text = "Mass Place";
             this.MassPlace.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(6, 160);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 4;
+            // 
             // MassPlaceClearBTN
             // 
             this.MassPlaceClearBTN.Location = new System.Drawing.Point(297, 160);
@@ -205,13 +217,14 @@
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // label1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 160);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(138, 165);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Rotation";
             // 
             // Form1
             // 
@@ -248,6 +261,7 @@
         private System.Windows.Forms.TextBox MassPlaceScriptTBX;
         private System.Windows.Forms.Button MassPlaceClearBTN;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

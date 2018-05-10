@@ -52,6 +52,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MapObjectFactory.cs" />
+    <Compile Include="Objects\Custom.cs" />
+    <Compile Include="Objects\MapObject.cs" />
+    <Compile Include="Objects\Spawnpoint.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
