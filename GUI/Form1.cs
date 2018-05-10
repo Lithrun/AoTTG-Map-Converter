@@ -21,5 +21,15 @@ namespace GUI
         {
             MapScriptTBX.Clear();
         }
+
+        private void CopyClipboardBTN_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(MapScriptOutputTBX.Text);
+        }
+
+        private void MapScriptOutpClearBTN_Click(object sender, EventArgs e)
+        {
+            MapScriptOutputTBX.Clear();
+        }
     }
 }
