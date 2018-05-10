@@ -13,7 +13,7 @@ namespace Logic.Objects
         public string Type { get; set; }
         public string Name { get; set; }
         public double[] Coordinates { get; set; }
-        public double[] Vector4D { get; set; }
+        public double[] Quarternion { get; set; }
 
         // Return a string based on the object
         public abstract string ConvertObjectToString();

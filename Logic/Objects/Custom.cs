@@ -39,7 +39,7 @@ namespace Logic.Objects
                 Tiling = new double[2] { double.Parse(input[10]), double.Parse(input[11]) };
 
                 Coordinates = new double[3] { double.Parse(input[12]), double.Parse(input[14]), double.Parse(input[13]) };
-                Vector4D = new double[4] { double.Parse(input[15]), double.Parse(input[16]), double.Parse(input[17]), double.Parse(input[18]) };
+                Quarternion = new double[4] { double.Parse(input[15]), double.Parse(input[16]), double.Parse(input[17]), double.Parse(input[18]) };
 
 
             }
@@ -53,7 +53,7 @@ namespace Logic.Objects
         // Return a string in CSV format
         public override string ConvertObjectToString()
         {
-            return String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13},{14},{15},{16},{17},{18};", Name, Type, Texture, Scale[2], Scale[0], Scale[1], Color[0], Color[1], Color[2], Color[3], Tiling[0], Tiling[1], Coordinates[0], Coordinates[2], Coordinates[1], Vector4D[0], Vector4D[1], Vector4D[2], Vector4D[3]);
+            return String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13},{14},{15},{16},{17},{18};", Name, Type, Texture, Scale[2], Scale[0], Scale[1], Color[0], Color[1], Color[2], Color[3], Tiling[0], Tiling[1], Coordinates[0], Coordinates[2], Coordinates[1], Quarternion[0], Quarternion[1], Quarternion[2], Quarternion[3]);
         }
 
     }

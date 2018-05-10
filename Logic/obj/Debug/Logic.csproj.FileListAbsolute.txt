@@ -4,3 +4,8 @@ D:\Hobby\AoTTG-Map-Converter\Logic\obj\Debug\Logic.csproj.CoreCompileInputs.cach
 D:\Hobby\AoTTG-Map-Converter\Logic\obj\Debug\Logic.dll
 D:\Hobby\AoTTG-Map-Converter\Logic\obj\Debug\Logic.pdb
 D:\Hobby\AoTTG-Map-Converter\Logic\obj\Debug\Logic.csprojResolveAssemblyReference.cache
+C:\Users\Axel\Desktop\DATA TEST\AoTTG-Map-Converter\Logic\bin\Debug\Logic.dll
+C:\Users\Axel\Desktop\DATA TEST\AoTTG-Map-Converter\Logic\bin\Debug\Logic.pdb
+C:\Users\Axel\Desktop\DATA TEST\AoTTG-Map-Converter\Logic\obj\Debug\Logic.csprojResolveAssemblyReference.cache
+C:\Users\Axel\Desktop\DATA TEST\AoTTG-Map-Converter\Logic\obj\Debug\Logic.dll
+C:\Users\Axel\Desktop\DATA TEST\AoTTG-Map-Converter\Logic\obj\Debug\Logic.pdb
