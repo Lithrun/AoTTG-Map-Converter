@@ -25,7 +25,7 @@ namespace Logic.Objects
                 Name = input[0];
                 Type = input[1];
                 Coordinates = new double[3] { double.Parse(input[2]), double.Parse(input[4]), double.Parse(input[3]) }; // Note this gets formatted to X, Y, Z
-                Vector4D = new double[4] { double.Parse(input[5]), double.Parse(input[6]), double.Parse(input[7]), double.Parse(input[8])  };
+                Quarternion = new double[4] { double.Parse(input[5]), double.Parse(input[6]), double.Parse(input[7]), double.Parse(input[8])  };
 
 
             } catch (Exception e)
@@ -38,7 +38,7 @@ namespace Logic.Objects
         // Return a string in CSV format
         public override string ConvertObjectToString()
         {
-            return String.Format("{0},{1},{2:},{3},{4},{5},{6},{7},{8};",Name, Type, Coordinates[0].ToString(), Coordinates[2], Coordinates[1], Vector4D[0], Vector4D[1], Vector4D[2], Vector4D[3]);
+            return String.Format("{0},{1},{2:},{3},{4},{5},{6},{7},{8};",Name, Type, Coordinates[0].ToString(), Coordinates[2], Coordinates[1], Quarternion[0], Quarternion[1], Quarternion[2], Quarternion[3]);
         }
 
         
