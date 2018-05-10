@@ -31,19 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.RegionMove = new System.Windows.Forms.TabPage();
+            this.MapScriptOutpClearBTN = new System.Windows.Forms.Button();
+            this.CopyClipboardBTN = new System.Windows.Forms.Button();
+            this.MapScriptOutputTBX = new System.Windows.Forms.TextBox();
+            this.RotationTBX = new System.Windows.Forms.TextBox();
+            this.MoveObjectsBTN = new System.Windows.Forms.Button();
             this.MapScriptClearBTN = new System.Windows.Forms.Button();
             this.MapScriptTBX = new System.Windows.Forms.TextBox();
             this.InstructionsTBX = new System.Windows.Forms.TextBox();
             this.MassPlace = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.MoveObjectsBTN = new System.Windows.Forms.Button();
-            this.RotationTBX = new System.Windows.Forms.TextBox();
-            this.MapScriptOutputTBX = new System.Windows.Forms.TextBox();
-            this.CopyClipboardBTN = new System.Windows.Forms.Button();
-            this.MapScriptOutpClearBTN = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.MassPlaceScriptTBX = new System.Windows.Forms.TextBox();
             this.MassPlaceClearBTN = new System.Windows.Forms.Button();
+            this.MassPlaceScriptTBX = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.RegionMove.SuspendLayout();
             this.MassPlace.SuspendLayout();
@@ -78,6 +79,51 @@
             this.RegionMove.Text = "Edit Region";
             this.RegionMove.UseVisualStyleBackColor = true;
             // 
+            // MapScriptOutpClearBTN
+            // 
+            this.MapScriptOutpClearBTN.Location = new System.Drawing.Point(297, 275);
+            this.MapScriptOutpClearBTN.Name = "MapScriptOutpClearBTN";
+            this.MapScriptOutpClearBTN.Size = new System.Drawing.Size(66, 23);
+            this.MapScriptOutpClearBTN.TabIndex = 7;
+            this.MapScriptOutpClearBTN.Text = "Clear";
+            this.MapScriptOutpClearBTN.UseVisualStyleBackColor = true;
+            this.MapScriptOutpClearBTN.Click += new System.EventHandler(this.MapScriptOutpClearBTN_Click);
+            // 
+            // CopyClipboardBTN
+            // 
+            this.CopyClipboardBTN.Location = new System.Drawing.Point(6, 273);
+            this.CopyClipboardBTN.Name = "CopyClipboardBTN";
+            this.CopyClipboardBTN.Size = new System.Drawing.Size(123, 23);
+            this.CopyClipboardBTN.TabIndex = 6;
+            this.CopyClipboardBTN.Text = "Copy to Clipboard";
+            this.CopyClipboardBTN.UseVisualStyleBackColor = true;
+            this.CopyClipboardBTN.Click += new System.EventHandler(this.CopyClipboardBTN_Click);
+            // 
+            // MapScriptOutputTBX
+            // 
+            this.MapScriptOutputTBX.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MapScriptOutputTBX.Location = new System.Drawing.Point(6, 189);
+            this.MapScriptOutputTBX.Multiline = true;
+            this.MapScriptOutputTBX.Name = "MapScriptOutputTBX";
+            this.MapScriptOutputTBX.Size = new System.Drawing.Size(357, 77);
+            this.MapScriptOutputTBX.TabIndex = 5;
+            // 
+            // RotationTBX
+            // 
+            this.RotationTBX.Location = new System.Drawing.Point(136, 160);
+            this.RotationTBX.Name = "RotationTBX";
+            this.RotationTBX.Size = new System.Drawing.Size(100, 20);
+            this.RotationTBX.TabIndex = 4;
+            // 
+            // MoveObjectsBTN
+            // 
+            this.MoveObjectsBTN.Location = new System.Drawing.Point(6, 160);
+            this.MoveObjectsBTN.Name = "MoveObjectsBTN";
+            this.MoveObjectsBTN.Size = new System.Drawing.Size(123, 23);
+            this.MoveObjectsBTN.TabIndex = 3;
+            this.MoveObjectsBTN.Text = "Move/Rotate objects";
+            this.MoveObjectsBTN.UseVisualStyleBackColor = true;
+            // 
             // MapScriptClearBTN
             // 
             this.MapScriptClearBTN.Location = new System.Drawing.Point(297, 160);
@@ -109,6 +155,7 @@
             // 
             // MassPlace
             // 
+            this.MassPlace.Controls.Add(this.comboBox1);
             this.MassPlace.Controls.Add(this.MassPlaceClearBTN);
             this.MassPlace.Controls.Add(this.MassPlaceScriptTBX);
             this.MassPlace.Controls.Add(this.textBox1);
@@ -120,59 +167,23 @@
             this.MassPlace.Text = "Mass Place";
             this.MassPlace.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // MassPlaceClearBTN
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(383, 460);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.MassPlaceClearBTN.Location = new System.Drawing.Point(297, 160);
+            this.MassPlaceClearBTN.Name = "MassPlaceClearBTN";
+            this.MassPlaceClearBTN.Size = new System.Drawing.Size(66, 23);
+            this.MassPlaceClearBTN.TabIndex = 3;
+            this.MassPlaceClearBTN.Text = "Clear";
+            this.MassPlaceClearBTN.UseVisualStyleBackColor = true;
             // 
-            // MoveObjectsBTN
+            // MassPlaceScriptTBX
             // 
-            this.MoveObjectsBTN.Location = new System.Drawing.Point(6, 160);
-            this.MoveObjectsBTN.Name = "MoveObjectsBTN";
-            this.MoveObjectsBTN.Size = new System.Drawing.Size(123, 23);
-            this.MoveObjectsBTN.TabIndex = 3;
-            this.MoveObjectsBTN.Text = "Move/Rotate objects";
-            this.MoveObjectsBTN.UseVisualStyleBackColor = true;
-            // 
-            // RotationTBX
-            // 
-            this.RotationTBX.Location = new System.Drawing.Point(136, 160);
-            this.RotationTBX.Name = "RotationTBX";
-            this.RotationTBX.Size = new System.Drawing.Size(100, 20);
-            this.RotationTBX.TabIndex = 4;
-            // 
-            // MapScriptOutputTBX
-            // 
-            this.MapScriptOutputTBX.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MapScriptOutputTBX.Location = new System.Drawing.Point(6, 189);
-            this.MapScriptOutputTBX.Multiline = true;
-            this.MapScriptOutputTBX.Name = "MapScriptOutputTBX";
-            this.MapScriptOutputTBX.Size = new System.Drawing.Size(357, 77);
-            this.MapScriptOutputTBX.TabIndex = 5;
-            // 
-            // CopyClipboardBTN
-            // 
-            this.CopyClipboardBTN.Location = new System.Drawing.Point(6, 273);
-            this.CopyClipboardBTN.Name = "CopyClipboardBTN";
-            this.CopyClipboardBTN.Size = new System.Drawing.Size(123, 23);
-            this.CopyClipboardBTN.TabIndex = 6;
-            this.CopyClipboardBTN.Text = "Copy to Clipboard";
-            this.CopyClipboardBTN.UseVisualStyleBackColor = true;
-            this.CopyClipboardBTN.Click += new System.EventHandler(this.CopyClipboardBTN_Click);
-            // 
-            // MapScriptOutpClearBTN
-            // 
-            this.MapScriptOutpClearBTN.Location = new System.Drawing.Point(297, 275);
-            this.MapScriptOutpClearBTN.Name = "MapScriptOutpClearBTN";
-            this.MapScriptOutpClearBTN.Size = new System.Drawing.Size(66, 23);
-            this.MapScriptOutpClearBTN.TabIndex = 7;
-            this.MapScriptOutpClearBTN.Text = "Clear";
-            this.MapScriptOutpClearBTN.UseVisualStyleBackColor = true;
-            this.MapScriptOutpClearBTN.Click += new System.EventHandler(this.MapScriptOutpClearBTN_Click);
+            this.MassPlaceScriptTBX.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MassPlaceScriptTBX.Location = new System.Drawing.Point(6, 77);
+            this.MassPlaceScriptTBX.Multiline = true;
+            this.MassPlaceScriptTBX.Name = "MassPlaceScriptTBX";
+            this.MassPlaceScriptTBX.Size = new System.Drawing.Size(357, 77);
+            this.MassPlaceScriptTBX.TabIndex = 2;
             // 
             // textBox1
             // 
@@ -185,23 +196,22 @@
             this.textBox1.Text = "This tool allows you to place objects randomly within a region X. Start by placin" +
     "g a region named X and paste the script in the textbox below.\r\n\r\n\r\n\r\n";
             // 
-            // MassPlaceScriptTBX
+            // tabPage3
             // 
-            this.MassPlaceScriptTBX.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MassPlaceScriptTBX.Location = new System.Drawing.Point(6, 77);
-            this.MassPlaceScriptTBX.Multiline = true;
-            this.MassPlaceScriptTBX.Name = "MassPlaceScriptTBX";
-            this.MassPlaceScriptTBX.Size = new System.Drawing.Size(357, 77);
-            this.MassPlaceScriptTBX.TabIndex = 2;
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(369, 304);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // MassPlaceClearBTN
+            // comboBox1
             // 
-            this.MassPlaceClearBTN.Location = new System.Drawing.Point(297, 160);
-            this.MassPlaceClearBTN.Name = "MassPlaceClearBTN";
-            this.MassPlaceClearBTN.Size = new System.Drawing.Size(66, 23);
-            this.MassPlaceClearBTN.TabIndex = 3;
-            this.MassPlaceClearBTN.Text = "Clear";
-            this.MassPlaceClearBTN.UseVisualStyleBackColor = true;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(6, 160);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 4;
             // 
             // Form1
             // 
@@ -210,7 +220,7 @@
             this.ClientSize = new System.Drawing.Size(403, 357);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "AoTTG Script Editor";
             this.tabControl1.ResumeLayout(false);
             this.RegionMove.ResumeLayout(false);
             this.RegionMove.PerformLayout();
@@ -237,6 +247,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox MassPlaceScriptTBX;
         private System.Windows.Forms.Button MassPlaceClearBTN;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
