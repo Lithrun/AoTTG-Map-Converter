@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logic;
 using Logic.Objects;
+using System.Globalization;
 
 namespace GUI
 {
@@ -19,7 +20,10 @@ namespace GUI
         MapObjectFactory Factory = new MapObjectFactory();
         public Form1()
         {
+            CultureInfo.DefaultThreadCurrentCulture = new System.Globalization.CultureInfo("en-US");
+            CultureInfo.DefaultThreadCurrentUICulture = new System.Globalization.CultureInfo("en-US");
             InitializeComponent();
+            Factory.mapObjects = new HashSet<MapObject>();
         }
         //One liners
         private void MapScriptClearBTN_Click(object sender, EventArgs e)

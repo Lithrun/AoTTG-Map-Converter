@@ -29,14 +29,15 @@ namespace Logic
         {
             foreach (string[] line in objects)
             {
-                mapObjects.Add(GetMapObject(line));
+                MapObject item = GetMapObject(line);
+                if(item != null)
+                    mapObjects.Add(item);
             }
         }
 
         public MapObject GetMapObject(string[] input)
         {
             MapObject mapObject;
-
 
             switch (input[0])
             {

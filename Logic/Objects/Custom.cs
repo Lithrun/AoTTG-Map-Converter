@@ -19,6 +19,7 @@ namespace Logic.Objects
         // Constructor based on a string array
         public Custom(string[] input)
         {
+            
             try
             {
 
