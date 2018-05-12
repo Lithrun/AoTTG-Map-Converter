@@ -42,28 +42,55 @@ namespace GUI
         private void MoveObjectsBTN_Click(object sender, EventArgs e)
         {
             Factory.mapObjects.Clear();
-            HashSet<string[]> items = new HashSet<string[]>();
+            double[] XLocation = new double[3];
+            double[] RegionSize = new double[3];
+            double[] YLocation = new double[3];
+
+            //Parse the input text from the textbox, split the text before passing it through the function
+            //return a hashset if inputstrings along with some very important vectors
+            HashSet<string[]> items = Parse_outRegions(MapScriptTBX.Text.Split(';'), out RegionSize, out XLocation, out YLocation);
+
+            Factory.AddMapObjects(items);
+
             //now get the desiered rotation value
             double angle = 0;
-            string[] lines = MapScriptTBX.Text.Split(';');
-
-
-            double[] XLocation = new double[3];
-            double[] size = new double[3];
-
-            double[] YLocation = new double[3];
-            //the last string in lines will always be an empty string "", so we just avoid it
-            for (int i = 0; i < lines.Length - 1; i++)
+            try
             {
-                string[] ObjectInfo = lines[i].Split(',').ToArray();
+                angle = (double.Parse(RotationTBX.Text)) * Math.PI / 180;
+            }
+            catch(Exception ex) { MessageBox.Show(ex.Message); }
+
+            //this rotates the objects inside the region
+            Factory.RotateObjectsInRegion(RegionSize, XLocation, YLocation, angle);
+
+            //print to output textbox
+            MapScriptOutputTBX.Clear();
+            HashSet<MapObject> MapScriptOutput = Factory.mapObjects;
+            foreach(MapObject item in MapScriptOutput)
+            {
+                MapScriptOutputTBX.AppendText(item.ConvertObjectToString());
+            }
+        }
+        HashSet<string[]> Parse_outRegions(string[] Lines, out double[] RegionSize, out double[] XLocation, out double[] YLocation)
+        {
+            HashSet<string[]> items = new HashSet<string[]>();
+
+            XLocation = new double[3];
+            RegionSize = new double[3];
+
+            YLocation = new double[3];
+            //the last string in lines will always be an empty string "", so we just avoid it
+            for (int i = 0; i < Lines.Length - 1; i++)
+            {
+                string[] ObjectInfo = Lines[i].Split(',').ToArray();
                 if(ObjectInfo[1] == "region" && ObjectInfo[2] == "X")
                 {
                     try
                     {
                         //I'm not sure about the order of the script, might need some tinkering
-                        size[0] = double.Parse(ObjectInfo[3]);
-                        size[1] = double.Parse(ObjectInfo[4]);
-                        size[2] = double.Parse(ObjectInfo[5]);
+                        RegionSize[0] = double.Parse(ObjectInfo[3]);
+                        RegionSize[1] = double.Parse(ObjectInfo[4]);
+                        RegionSize[2] = double.Parse(ObjectInfo[5]);
 
                         XLocation[0] = double.Parse(ObjectInfo[6]);
                         XLocation[1] = double.Parse(ObjectInfo[8]);
@@ -76,6 +103,7 @@ namespace GUI
                 }
                 else if(ObjectInfo[1] == "region" && ObjectInfo[2] == "Y")
                 {
+                    YLocation = new double[3];
                     try
                     {
                         YLocation[0] = double.Parse(ObjectInfo[6]);
@@ -86,24 +114,8 @@ namespace GUI
                 }
                 items.Add(ObjectInfo);
             }
-            Factory.AddMapObjects(items);
-            try
-            {
-                angle = (double.Parse(RotationTBX.Text)) * Math.PI / 180;
-            }
-            catch(Exception ex) { MessageBox.Show(ex.Message); }
+            return items;
 
-            //this rotates the objects inside the region
-            Factory.RotateObjectsInRegion(size, XLocation, YLocation, angle);
-
-            //print to output textbox
-            MapScriptOutputTBX.Clear();
-            HashSet<MapObject> MapScriptOutput = Factory.mapObjects;
-            foreach(MapObject item in MapScriptOutput)
-            {
-                //ConvertObjectToString isn't implemented yet
-                MapScriptOutputTBX.AppendText(item.ConvertObjectToString());
-            }
         }
     }
 }

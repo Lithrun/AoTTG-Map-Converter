@@ -21,7 +21,6 @@ namespace Logic
             {
                 if (_instance == null) _instance = new MapObjectFactory();
             }
-
             return _instance;
         }
 
@@ -38,7 +37,10 @@ namespace Logic
         public MapObject GetMapObject(string[] input)
         {
             MapObject mapObject;
-
+            if (input[0][0] == '\n')
+            {
+                input[0] = input[0].Remove(0, 1);
+            }
             switch (input[0])
             {
                 case "spawnpoint":
@@ -63,18 +65,9 @@ namespace Logic
         public void RotateObjectsInRegion(double[] size, double[] XLocation, double[] YLocation, double angle)
         {
             //first we need to find all the mapObjects that are in the region and sort them out
-            HashSet<MapObject> Group = new HashSet<MapObject>();
-            foreach(MapObject item in mapObjects)
-            {
-                //I assume that the origin of a region is the center
-                //this could use some optimization
-                if (Math.Abs(item.Coordinates[0] - XLocation[0]) > size[0] / 2 &&
-                    Math.Abs(item.Coordinates[1] - XLocation[1]) > size[1] / 2 &&
-                    Math.Abs(item.Coordinates[2] - XLocation[2]) > size[2] / 2)
-                {
-                    Group.Add(item);
-                }
-            }
+            HashSet<MapObject> Group = GetObjectsInRegion(size, XLocation);
+
+
             foreach (MapObject item in Group)
             {
                 //centralise the objects to the origin
@@ -82,9 +75,10 @@ namespace Logic
                 {
                     item.Coordinates[i] -= XLocation[i];
                 }
+
                 //apply linear transformation and quarternion multiplication
                 item.Coordinates = LinearTransformation(RotateZMatrix(angle), item.Coordinates);
-                item.Quarternion = QuartarnionMultiply(QRotateY(angle), item.Quarternion);
+                item.Quarternion = QuartarnionMultiply(item.Quarternion, QRotateY(-angle));
                 //move the objects back
                 for (int i = 0; i < 3; i++)
                 {
@@ -94,6 +88,24 @@ namespace Logic
                 }
             }
         }
+
+        public HashSet<MapObject> GetObjectsInRegion(double[] size, double[] Location)
+        {
+            HashSet<MapObject> Group = new HashSet<MapObject>();
+            foreach (MapObject item in mapObjects)
+            {
+                //I assume that the origin of a region is the center
+                //this could use some optimization
+                if (Math.Abs(item.Coordinates[0] - Location[0]) < size[0] / 2 &&
+                    Math.Abs(item.Coordinates[1] - Location[1]) < size[1] / 2 &&
+                    Math.Abs(item.Coordinates[2] - Location[2]) < size[2] / 2)
+                {
+                    Group.Add(item);
+                }
+            }
+            return Group;
+        }
+
 
 
         //these are computational functions that are necessary
@@ -147,7 +159,7 @@ namespace Logic
         }
 
         //use this to multiply two quarternions, note that order matters
-        //usually you want the order to be "current quarternion" * "desired rotational quarternion"
+        //usually you want the order to be "desired rotational quarternion" * "current quarternion"
         static double[] QuartarnionMultiply(double[] Q, double[] R)
         {
             double[] QProduct =

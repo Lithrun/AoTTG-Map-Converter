@@ -11,3 +11,8 @@ D:\Hobby\AoTTG-Map-Converter\Debug\obj\Debug\Debug.pdb
 C:\Users\Axel\Desktop\DATA TEST\AoTTG-Map-Converter\Debug\bin\Debug\Debug.exe.config
 C:\Users\Axel\Desktop\DATA TEST\AoTTG-Map-Converter\Debug\obj\Debug\Debug.exe
 C:\Users\Axel\Desktop\DATA TEST\AoTTG-Map-Converter\Debug\obj\Debug\Debug.pdb
+C:\Users\Axel\Desktop\DATA TEST\AoTTG-Map-Converter\Debug\bin\Debug\Debug.exe
+C:\Users\Axel\Desktop\DATA TEST\AoTTG-Map-Converter\Debug\bin\Debug\Debug.pdb
+C:\Users\Axel\Desktop\DATA TEST\AoTTG-Map-Converter\Debug\bin\Debug\Logic.dll
+C:\Users\Axel\Desktop\DATA TEST\AoTTG-Map-Converter\Debug\bin\Debug\Logic.pdb
+C:\Users\Axel\Desktop\DATA TEST\AoTTG-Map-Converter\Debug\obj\Debug\Debug.csprojResolveAssemblyReference.cache

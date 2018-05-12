@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.RegionMove = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.MapScriptOutpClearBTN = new System.Windows.Forms.Button();
             this.CopyClipboardBTN = new System.Windows.Forms.Button();
             this.MapScriptOutputTBX = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@
             this.MassPlaceScriptTBX = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.RegionMove.SuspendLayout();
             this.MassPlace.SuspendLayout();
@@ -81,6 +81,15 @@
             this.RegionMove.Text = "Edit Region";
             this.RegionMove.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(138, 165);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Rotation";
+            // 
             // MapScriptOutpClearBTN
             // 
             this.MapScriptOutpClearBTN.Location = new System.Drawing.Point(297, 275);
@@ -105,6 +114,7 @@
             // 
             this.MapScriptOutputTBX.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MapScriptOutputTBX.Location = new System.Drawing.Point(6, 189);
+            this.MapScriptOutputTBX.MaxLength = 20000000;
             this.MapScriptOutputTBX.Multiline = true;
             this.MapScriptOutputTBX.Name = "MapScriptOutputTBX";
             this.MapScriptOutputTBX.Size = new System.Drawing.Size(357, 77);
@@ -142,6 +152,7 @@
             // 
             this.MapScriptTBX.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MapScriptTBX.Location = new System.Drawing.Point(6, 77);
+            this.MapScriptTBX.MaxLength = 20000000;
             this.MapScriptTBX.Multiline = true;
             this.MapScriptTBX.Name = "MapScriptTBX";
             this.MapScriptTBX.Size = new System.Drawing.Size(357, 77);
@@ -216,15 +227,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(138, 165);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Rotation";
             // 
             // Form1
             // 
