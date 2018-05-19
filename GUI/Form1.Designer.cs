@@ -41,14 +41,16 @@
             this.MapScriptTBX = new System.Windows.Forms.TextBox();
             this.InstructionsTBX = new System.Windows.Forms.TextBox();
             this.MassPlace = new System.Windows.Forms.TabPage();
+            this.ClearTBXMP2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.MPScriptOutTBX = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.MassPlaceClearBTN = new System.Windows.Forms.Button();
-            this.MassPlaceScriptTBX = new System.Windows.Forms.TextBox();
+            this.MPScriptTBX = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.MassPlaceBTN = new System.Windows.Forms.Button();
+            this.MPCountTBX = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.RegionMove.SuspendLayout();
             this.MassPlace.SuspendLayout();
@@ -173,12 +175,14 @@
             // 
             // MassPlace
             // 
-            this.MassPlace.Controls.Add(this.button2);
+            this.MassPlace.Controls.Add(this.MPCountTBX);
+            this.MassPlace.Controls.Add(this.MassPlaceBTN);
+            this.MassPlace.Controls.Add(this.ClearTBXMP2);
             this.MassPlace.Controls.Add(this.button1);
-            this.MassPlace.Controls.Add(this.textBox2);
+            this.MassPlace.Controls.Add(this.MPScriptOutTBX);
             this.MassPlace.Controls.Add(this.comboBox1);
             this.MassPlace.Controls.Add(this.MassPlaceClearBTN);
-            this.MassPlace.Controls.Add(this.MassPlaceScriptTBX);
+            this.MassPlace.Controls.Add(this.MPScriptTBX);
             this.MassPlace.Controls.Add(this.textBox1);
             this.MassPlace.Location = new System.Drawing.Point(4, 22);
             this.MassPlace.Name = "MassPlace";
@@ -188,31 +192,59 @@
             this.MassPlace.Text = "Mass Place";
             this.MassPlace.UseVisualStyleBackColor = true;
             // 
+            // ClearTBXMP2
+            // 
+            this.ClearTBXMP2.Location = new System.Drawing.Point(297, 275);
+            this.ClearTBXMP2.Name = "ClearTBXMP2";
+            this.ClearTBXMP2.Size = new System.Drawing.Size(66, 23);
+            this.ClearTBXMP2.TabIndex = 7;
+            this.ClearTBXMP2.Text = "Clear";
+            this.ClearTBXMP2.UseVisualStyleBackColor = true;
+            this.ClearTBXMP2.Click += new System.EventHandler(this.ClearTBXMP2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(7, 273);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Copy to Clipboard";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // MPScriptOutTBX
+            // 
+            this.MPScriptOutTBX.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MPScriptOutTBX.Location = new System.Drawing.Point(6, 189);
+            this.MPScriptOutTBX.Multiline = true;
+            this.MPScriptOutTBX.Name = "MPScriptOutTBX";
+            this.MPScriptOutTBX.Size = new System.Drawing.Size(357, 77);
+            this.MPScriptOutTBX.TabIndex = 5;
+            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 160);
+            this.comboBox1.Location = new System.Drawing.Point(6, 133);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 4;
             // 
             // MassPlaceClearBTN
             // 
-            this.MassPlaceClearBTN.Location = new System.Drawing.Point(297, 160);
+            this.MassPlaceClearBTN.Location = new System.Drawing.Point(297, 133);
             this.MassPlaceClearBTN.Name = "MassPlaceClearBTN";
             this.MassPlaceClearBTN.Size = new System.Drawing.Size(66, 23);
             this.MassPlaceClearBTN.TabIndex = 3;
             this.MassPlaceClearBTN.Text = "Clear";
             this.MassPlaceClearBTN.UseVisualStyleBackColor = true;
             // 
-            // MassPlaceScriptTBX
+            // MPScriptTBX
             // 
-            this.MassPlaceScriptTBX.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MassPlaceScriptTBX.Location = new System.Drawing.Point(6, 77);
-            this.MassPlaceScriptTBX.Multiline = true;
-            this.MassPlaceScriptTBX.Name = "MassPlaceScriptTBX";
-            this.MassPlaceScriptTBX.Size = new System.Drawing.Size(357, 77);
-            this.MassPlaceScriptTBX.TabIndex = 2;
+            this.MPScriptTBX.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MPScriptTBX.Location = new System.Drawing.Point(6, 50);
+            this.MPScriptTBX.Multiline = true;
+            this.MPScriptTBX.Name = "MPScriptTBX";
+            this.MPScriptTBX.Size = new System.Drawing.Size(357, 77);
+            this.MPScriptTBX.TabIndex = 2;
             // 
             // textBox1
             // 
@@ -220,7 +252,7 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(357, 65);
+            this.textBox1.Size = new System.Drawing.Size(357, 38);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "This tool allows you to place objects randomly within a region X. Start by placin" +
     "g a region named X and paste the script in the textbox below.\r\n\r\n\r\n\r\n";
@@ -234,32 +266,23 @@
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // MassPlaceBTN
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(6, 189);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(357, 77);
-            this.textBox2.TabIndex = 5;
+            this.MassPlaceBTN.Location = new System.Drawing.Point(7, 160);
+            this.MassPlaceBTN.Name = "MassPlaceBTN";
+            this.MassPlaceBTN.Size = new System.Drawing.Size(72, 23);
+            this.MassPlaceBTN.TabIndex = 8;
+            this.MassPlaceBTN.Text = "Mass Place";
+            this.MassPlaceBTN.UseVisualStyleBackColor = true;
+            this.MassPlaceBTN.Click += new System.EventHandler(this.MassPlaceBTN_Click);
             // 
-            // button1
+            // MPCountTBX
             // 
-            this.button1.Location = new System.Drawing.Point(7, 273);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Copy to Clipboard";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(297, 275);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(66, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.MPCountTBX.Location = new System.Drawing.Point(133, 133);
+            this.MPCountTBX.Name = "MPCountTBX";
+            this.MPCountTBX.Size = new System.Drawing.Size(58, 20);
+            this.MPCountTBX.TabIndex = 9;
+            this.MPCountTBX.Text = "100";
             // 
             // Form1
             // 
@@ -293,13 +316,15 @@
         private System.Windows.Forms.Button MoveObjectsBTN;
         private System.Windows.Forms.Button MapScriptOutpClearBTN;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox MassPlaceScriptTBX;
+        private System.Windows.Forms.TextBox MPScriptTBX;
         private System.Windows.Forms.Button MassPlaceClearBTN;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ClearTBXMP2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox MPScriptOutTBX;
+        private System.Windows.Forms.Button MassPlaceBTN;
+        private System.Windows.Forms.TextBox MPCountTBX;
     }
 }
 

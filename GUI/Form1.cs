@@ -24,6 +24,44 @@ namespace GUI
             CultureInfo.DefaultThreadCurrentUICulture = new System.Globalization.CultureInfo("en-US");
             InitializeComponent();
             Factory.mapObjects = new HashSet<MapObject>();
+            #region Add Mapobjects to the combobox
+
+            //add Size 1,1,1 trees in our combobox
+            comboBox1.Items.Add(
+                new Custom(
+                    new string[19] {
+                        "customb","tree0","default","1","1","1","0","1","1","1","1.0","1.0","0","0","0","0","1","0","0"}));
+            comboBox1.Items.Add(
+                new Custom(
+                    new string[19] {
+                        "custom","tree1","default","1","1","1","0","1","1","1","1.0","1.0","0","0","0","0","1","0","0" }));
+            comboBox1.Items.Add(
+                new Custom(
+                    new string[19] {
+                        "custom","tree2","default","1","1","1","0","1","1","1","1.0","1.0","0","0","0","0","1","0","0" }));
+            comboBox1.Items.Add(
+                new Custom(
+                    new string[19] {
+                        "custom","tree3","default","1","1","1","0","1","1","1","1.0","1.0","0","0","0","0","1","0","0" }));
+            comboBox1.Items.Add(
+                new Custom(
+                    new string[19] {
+                        "custom","tree4","default","1","1","1","0","1","1","1","1.0","1.0","0","0","0","0","1","0","0" }));
+            comboBox1.Items.Add(
+                new Custom(
+                    new string[19] {
+                        "custom","tree5","default","1","1","1","0","1","1","1","1.0","1.0","0","0","0","0","1","0","0" }));
+            comboBox1.Items.Add(
+                new Custom(
+                    new string[19] {
+                        "custom","tree6","default","1","1","1","0","1","1","1","1.0","1.0","0","0","0","0","1","0","0" }));
+            comboBox1.Items.Add(
+                new Custom(
+                    new string[19] {
+                        "custom","tree7","default","1","1","1","0","1","1","1","1.0","1.0","0","0","0","0","1","0","0" }));
+
+
+            #endregion
         }
         //One liners
         private void MapScriptClearBTN_Click(object sender, EventArgs e)
@@ -116,6 +154,21 @@ namespace GUI
             }
             return items;
 
+        }
+
+        private void ClearTBXMP2_Click(object sender, EventArgs e)
+        {
+            double[] RegionSize;
+            double[] XLocation;
+            double[] YLocation;
+            HashSet<string[]> Objects = Parse_outRegions(MPScriptTBX.Text.Split(';'), out RegionSize, out XLocation, out YLocation);
+            Factory.mapObjects.Clear();
+            Factory.AddMapObjects(Objects);
+
+        }
+        private void MassPlaceBTN_Click(object sender, EventArgs e)
+        {
+            int Count = int.Parse(MPCountTBX.Text);
         }
     }
 }
