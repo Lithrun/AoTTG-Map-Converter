@@ -10,7 +10,8 @@ using System.Windows.Forms;
 using Logic;
 using Logic.Objects;
 using System.Globalization;
-
+using System.IO;
+using GUI.Properties;
 namespace GUI
 {
     public partial class Form1 : Form
@@ -27,39 +28,14 @@ namespace GUI
             #region Add Mapobjects to the combobox
 
             //add Size 1,1,1 trees in our combobox
-            comboBox1.Items.Add(
-                new Custom(
-                    new string[19] {
-                        "customb","tree0","default","1","1","1","0","1","1","1","1.0","1.0","0","0","0","0","1","0","0"}));
-            comboBox1.Items.Add(
-                new Custom(
-                    new string[19] {
-                        "custom","tree1","default","1","1","1","0","1","1","1","1.0","1.0","0","0","0","0","1","0","0" }));
-            comboBox1.Items.Add(
-                new Custom(
-                    new string[19] {
-                        "custom","tree2","default","1","1","1","0","1","1","1","1.0","1.0","0","0","0","0","1","0","0" }));
-            comboBox1.Items.Add(
-                new Custom(
-                    new string[19] {
-                        "custom","tree3","default","1","1","1","0","1","1","1","1.0","1.0","0","0","0","0","1","0","0" }));
-            comboBox1.Items.Add(
-                new Custom(
-                    new string[19] {
-                        "custom","tree4","default","1","1","1","0","1","1","1","1.0","1.0","0","0","0","0","1","0","0" }));
-            comboBox1.Items.Add(
-                new Custom(
-                    new string[19] {
-                        "custom","tree5","default","1","1","1","0","1","1","1","1.0","1.0","0","0","0","0","1","0","0" }));
-            comboBox1.Items.Add(
-                new Custom(
-                    new string[19] {
-                        "custom","tree6","default","1","1","1","0","1","1","1","1.0","1.0","0","0","0","0","1","0","0" }));
-            comboBox1.Items.Add(
-                new Custom(
-                    new string[19] {
-                        "custom","tree7","default","1","1","1","0","1","1","1","1.0","1.0","0","0","0","0","1","0","0" }));
-
+            comboBox1.Items.Add("tree0");
+            comboBox1.Items.Add("tree1");
+            comboBox1.Items.Add("tree2");
+            comboBox1.Items.Add("tree3");
+            comboBox1.Items.Add("tree4");
+            comboBox1.Items.Add("tree5");
+            comboBox1.Items.Add("tree6");
+            comboBox1.Items.Add("tree7");
 
             #endregion
         }
@@ -158,17 +134,62 @@ namespace GUI
 
         private void ClearTBXMP2_Click(object sender, EventArgs e)
         {
-            double[] RegionSize;
-            double[] XLocation;
-            double[] YLocation;
-            HashSet<string[]> Objects = Parse_outRegions(MPScriptTBX.Text.Split(';'), out RegionSize, out XLocation, out YLocation);
-            Factory.mapObjects.Clear();
-            Factory.AddMapObjects(Objects);
-
+            MPScriptOutTBX.Clear();
         }
         private void MassPlaceBTN_Click(object sender, EventArgs e)
         {
+            Factory.mapObjects.Clear();
+
             int Count = int.Parse(MPCountTBX.Text);
+            double[] RegionSize;
+            double[] XLocation;
+            double[] YLocation;
+
+            HashSet<string[]> Objects = Parse_outRegions(MPScriptTBX.Text.Split(';'), out RegionSize, out XLocation, out YLocation);
+            Factory.AddMapObjects(Objects);
+            HashSet<MapObject> Items = GetRandomMapObjectsFromItemListTXT(Count);
+            Normal_Distribution randstandard = new Normal_Distribution();
+
+            foreach (MapObject item in Items)
+            {
+                item.Coordinates = new double[3]
+                {
+                    RegionSize[0] / 2 * randstandard.Next() + XLocation[0],
+                    RegionSize[2] / 2 * randstandard.Next() + XLocation[1],
+                    RegionSize[1] / 2 * randstandard.Next() + XLocation[2],
+                };
+                //randomly rotate the items around the Z axis, just for some variation
+                item.RotateRoundZ(randstandard.NextUniform(Math.PI * 2));
+                Factory.mapObjects.Add(item);
+            }
+
+            MPScriptOutTBX.Clear();
+            foreach(MapObject Item in Factory.mapObjects)
+            {
+                MPScriptOutTBX.AppendText(Item.ConvertObjectToString());
+            }
+        }
+        private HashSet<MapObject> GetRandomMapObjectsFromItemListTXT(int Count)
+        {
+            string[] items = Resources.ItemList.Split(';');
+            HashSet<MapObject> randomTerrain = new HashSet<MapObject>();
+            Random gen = new Random();
+            for (int i = 0; i < Count; i++)
+            {
+                string MapItem = items[gen.Next(0, items.Length - 1)];
+                randomTerrain.Add(Factory.GetMapObject(MapItem.Split(',')));
+            }
+            return randomTerrain;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(MPScriptOutTBX.Text);
+        }
+
+        private void MassPlaceClearBTN_Click(object sender, EventArgs e)
+        {
+            MPScriptTBX.Clear();
         }
     }
 }

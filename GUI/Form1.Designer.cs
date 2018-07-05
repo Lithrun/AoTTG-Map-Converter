@@ -41,6 +41,8 @@
             this.MapScriptTBX = new System.Windows.Forms.TextBox();
             this.InstructionsTBX = new System.Windows.Forms.TextBox();
             this.MassPlace = new System.Windows.Forms.TabPage();
+            this.MPCountTBX = new System.Windows.Forms.TextBox();
+            this.MassPlaceBTN = new System.Windows.Forms.Button();
             this.ClearTBXMP2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.MPScriptOutTBX = new System.Windows.Forms.TextBox();
@@ -49,8 +51,6 @@
             this.MPScriptTBX = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.MassPlaceBTN = new System.Windows.Forms.Button();
-            this.MPCountTBX = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.RegionMove.SuspendLayout();
             this.MassPlace.SuspendLayout();
@@ -192,6 +192,24 @@
             this.MassPlace.Text = "Mass Place";
             this.MassPlace.UseVisualStyleBackColor = true;
             // 
+            // MPCountTBX
+            // 
+            this.MPCountTBX.Location = new System.Drawing.Point(133, 133);
+            this.MPCountTBX.Name = "MPCountTBX";
+            this.MPCountTBX.Size = new System.Drawing.Size(58, 20);
+            this.MPCountTBX.TabIndex = 9;
+            this.MPCountTBX.Text = "100";
+            // 
+            // MassPlaceBTN
+            // 
+            this.MassPlaceBTN.Location = new System.Drawing.Point(7, 160);
+            this.MassPlaceBTN.Name = "MassPlaceBTN";
+            this.MassPlaceBTN.Size = new System.Drawing.Size(72, 23);
+            this.MassPlaceBTN.TabIndex = 8;
+            this.MassPlaceBTN.Text = "Mass Place";
+            this.MassPlaceBTN.UseVisualStyleBackColor = true;
+            this.MassPlaceBTN.Click += new System.EventHandler(this.MassPlaceBTN_Click);
+            // 
             // ClearTBXMP2
             // 
             this.ClearTBXMP2.Location = new System.Drawing.Point(297, 275);
@@ -210,6 +228,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Copy to Clipboard";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MPScriptOutTBX
             // 
@@ -236,6 +255,7 @@
             this.MassPlaceClearBTN.TabIndex = 3;
             this.MassPlaceClearBTN.Text = "Clear";
             this.MassPlaceClearBTN.UseVisualStyleBackColor = true;
+            this.MassPlaceClearBTN.Click += new System.EventHandler(this.MassPlaceClearBTN_Click);
             // 
             // MPScriptTBX
             // 
@@ -265,24 +285,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // MassPlaceBTN
-            // 
-            this.MassPlaceBTN.Location = new System.Drawing.Point(7, 160);
-            this.MassPlaceBTN.Name = "MassPlaceBTN";
-            this.MassPlaceBTN.Size = new System.Drawing.Size(72, 23);
-            this.MassPlaceBTN.TabIndex = 8;
-            this.MassPlaceBTN.Text = "Mass Place";
-            this.MassPlaceBTN.UseVisualStyleBackColor = true;
-            this.MassPlaceBTN.Click += new System.EventHandler(this.MassPlaceBTN_Click);
-            // 
-            // MPCountTBX
-            // 
-            this.MPCountTBX.Location = new System.Drawing.Point(133, 133);
-            this.MPCountTBX.Name = "MPCountTBX";
-            this.MPCountTBX.Size = new System.Drawing.Size(58, 20);
-            this.MPCountTBX.TabIndex = 9;
-            this.MPCountTBX.Text = "100";
             // 
             // Form1
             // 

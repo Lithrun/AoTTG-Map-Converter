@@ -57,9 +57,5 @@ namespace Logic.Objects
                 "{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13},{14},{15},{16},{17},{18};", 
                 Name, Type, Texture, Scale[0], Scale[1], Scale[2], Color[0], Color[1], Color[2], Color[3], Tiling[0], Tiling[1], Coordinates[0], Coordinates[2], Coordinates[1], Quarternion[0], Quarternion[1], Quarternion[2], Quarternion[3]);
         }
-        public override string ToString()
-        {
-            return Type;
-        }
     }
 }
